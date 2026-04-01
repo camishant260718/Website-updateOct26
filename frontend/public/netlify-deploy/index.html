@@ -41,12 +41,13 @@ img{display:block;}
 .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;color:#FFFFFF;padding:4px;}
 
 /* ── Hero ── */
-.hero{min-height:auto;background-color:#f5f1ed;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:60px;}
+.hero{min-height:auto;background-color:#f5f1ed;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:60px;overflow:visible;}
 .hero-grid{max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0.5rem;width:100%;box-sizing:border-box;display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;flex:1;}
 .hero-welcome{font-style:italic;font-size:16px;color:#003554;margin:0 0 1rem;}
 .hero h1{font-size:clamp(2.4rem,4.5vw,4.1rem);font-weight:700;color:#003554;line-height:1.1;margin:0 0 0.5rem;letter-spacing:-0.5px;}
 .hero-bar{width:200px;height:4px;background-color:#B8860B;border-radius:2px;margin-bottom:2rem;}
 .hero-body p{font-size:15px;color:#3A3A3A;line-height:1.8;margin:0 0 1rem;max-width:500px;font-family:'Poppins',sans-serif;}
+.hero-body p.last-para{margin-bottom:1.5rem;}
 .hero-body p strong{color:#003554;font-weight:700;}
 .hero-quote{font-family:'Poppins',sans-serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);color:#003554;line-height:1.7;margin:0 0 1rem;max-width:500px;border-left:3px solid #B8860B;padding-left:16px;}
 .hero-quote strong{font-weight:700;}
@@ -191,7 +192,7 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
 .footer .copy{font-size:11.5px;color:rgba(255,255,255,0.2);margin:0;letter-spacing:0.5px;}
 
 /* ── WhatsApp FAB ── */
-.wa-fab{position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background-color:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;}
+.wa-fab{position:fixed;bottom:96px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background-color:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;}
 .wa-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,0.5);}
 
 /* ── Mobile Overlay ── */
@@ -276,7 +277,7 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
     <div class="hero-body">
       <p>A <strong>Chartered Accountant</strong> and <strong>Company Secretary</strong> with 13+ years across multinationals — I help organisations turn complex financial data into structured control, clear reporting, and decisions that drive performance.</p>
       <p class="hero-quote"><em>I believe numbers should not just report the past — they should illuminate the <strong>path forward</strong>.</em></p>
-      <p>I have worked with organisations including <strong>Al Futtaim Engineering, Essar Group, Reliance Communications</strong>, and <strong>UAE Investor Family Office</strong>. Currently serving as Senior Manager — Finance &amp; Audit at <strong>Dubai Electricity and Water Authority (DEWA)</strong>.</p>
+      <p class="last-para">I have worked with organisations including <strong>Al Futtaim Engineering, Essar Group, Reliance Communications</strong>, and <strong>UAE Investor Family Office</strong>. Currently serving as Senior Manager — Finance &amp; Audit at <strong>Dubai Electricity and Water Authority (DEWA)</strong>.</p>
     </div>
     <div class="hero-btns">
       <button class="btn-collab" onclick="document.querySelector('#connect').scrollIntoView({behavior:'smooth'})">

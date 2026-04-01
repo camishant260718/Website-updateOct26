@@ -62,7 +62,7 @@ const WhatsAppButton = () => (
     data-testid="whatsapp-fab"
     style={{
       position: 'fixed',
-      bottom: '28px',
+      bottom: '96px',
       right: '28px',
       zIndex: 900,
       width: '56px',
