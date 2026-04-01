@@ -10,290 +10,322 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;color:#1A1A2E;overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;color:#1A1A2E;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}
 a{text-decoration:none;}
-
-/* ── Header ── */
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#003554;padding:0 2rem;transition:box-shadow .4s ease;}
-.header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.25);}
-.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.header-left{display:flex;align-items:center;}
-.social-icons{display:flex;align-items:center;gap:10px;margin-right:20px;}
-.social-icon{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .25s ease;}
-.social-icon:hover.li{background:#0077b5;}
-.social-icon:hover.wa{background:#25D366;}
-.green-dot{width:10px;height:10px;border-radius:50%;background:#4ADE80;display:inline-block;flex-shrink:0;animation:greenPulse 2s ease-in-out infinite;}
-.header-name{font-size:20px;font-weight:700;color:#FFF;letter-spacing:.5px;display:flex;align-items:center;gap:10px;}
-.desktop-nav{display:flex;gap:2.5rem;align-items:center;}
-.desktop-nav a{color:rgba(255,255,255,.7);font-size:14px;font-weight:400;letter-spacing:.3px;padding-bottom:4px;border-bottom:2px solid transparent;transition:color .3s,border-color .3s;}
-.desktop-nav a:hover,.desktop-nav a.active{color:#FFF;}
-.desktop-nav a.active{font-weight:600;border-bottom-color:#B8860B;}
-.desktop-nav .collab{font-weight:500;}
-.desktop-nav .collab:hover{color:#B8860B;}
-.mobile-menu-btn{display:none;background:none;border:none;color:#FFF;cursor:pointer;padding:4px;font-size:24px;}
-
-/* ── Hero ── */
-.hero{min-height:auto;background:#f5f1ed;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:60px;}
-.hero-grid{max-width:1200px;margin:0 auto;padding:1.5rem 2rem .5rem;width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center;flex:1;}
-.hero-welcome{font-style:italic;font-size:16px;color:#003554;margin-bottom:1rem;}
-.hero h1{font-size:clamp(2.4rem,4.5vw,4.1rem);font-weight:700;color:#003554;line-height:1.1;margin-bottom:.5rem;letter-spacing:-.5px;}
-.hero-bar{width:200px;height:4px;background:#B8860B;border-radius:2px;margin-bottom:2rem;}
-.hero p{font-size:15px;color:#3A3A3A;line-height:1.8;margin-bottom:1rem;max-width:500px;}
-.hero p strong{color:#003554;font-weight:700;}
-.hero-quote{font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);color:#003554;line-height:1.7;max-width:500px;border-left:3px solid #B8860B;padding-left:16px;margin-bottom:1rem;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:2rem;}
-.btn-primary{background:#003554;color:#FFF;border:none;padding:10px 22px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:background .3s,transform .2s;}
-.btn-primary:hover{transform:translateY(-2px);}
-.btn-outline{background:transparent;color:#003554;border:2px solid #003554;padding:9px 22px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:background .3s,color .3s,transform .2s;}
-.btn-outline:hover{background:#003554;color:#FFF;transform:translateY(-2px);}
-.hero-stats{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem;}
-.hero-stats a{font-size:14px;font-weight:700;color:#003554;text-decoration:underline;text-underline-offset:3px;}
-.hero-stats .dot{color:#8A8577;font-size:14px;}
-.hero-stats .on-li{font-size:13px;color:#8A8577;margin-left:4px;}
-.hero-photo{display:flex;justify-content:center;align-items:flex-end;margin-bottom:-1.75rem;}
-.hero-photo img{width:100%;height:auto;object-fit:contain;max-height:600px;max-width:480px;}
-
-/* ── Skills Ribbon ── */
-.ribbon{background:#003554;padding:.85rem 0;overflow:hidden;position:relative;}
-.ribbon-track{display:flex;gap:3rem;white-space:nowrap;animation:marquee 20s linear infinite;width:max-content;}
-.ribbon-item{font-style:italic;font-size:15px;color:#B8860B;font-weight:500;letter-spacing:.5px;display:flex;align-items:center;gap:12px;}
-.ribbon-item::before{content:'';width:6px;height:6px;border-radius:50%;background:#B8860B;display:inline-block;flex-shrink:0;}
-
-/* ── About ── */
-.about{background:#efece6;padding:5rem 2rem;}
-.about-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:8px;overflow:hidden;}
-.about-left{padding:3rem 3rem 3rem 2.5rem;border-right:1px solid rgba(66,86,100,.15);display:flex;flex-direction:column;justify-content:space-between;}
-.about-label{display:flex;align-items:center;gap:12px;margin-bottom:2rem;}
-.about-label .line{width:40px;height:2px;background:#003554;display:inline-block;}
-.about-label span:last-child{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#003554;}
-.about h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#003554;line-height:1.35;margin-bottom:2rem;letter-spacing:-.3px;}
-.about-left p{font-size:15px;color:#3A4A5C;line-height:1.8;margin-bottom:1.25rem;}
-.quad-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
-.quad{padding:2rem 1.75rem;cursor:default;position:relative;z-index:1;transition:background .3s,transform .3s,box-shadow .3s;}
-.quad:nth-child(1),.quad:nth-child(2){border-bottom:1px solid rgba(66,86,100,.15);}
-.quad:nth-child(1),.quad:nth-child(3){border-right:1px solid rgba(66,86,100,.15);}
-.quad:hover{background:#1B3A5C;transform:scale(1.02);box-shadow:0 8px 30px rgba(27,58,92,.2);z-index:2;}
-.quad .num{font-style:italic;font-size:28px;font-weight:500;color:#B8860B;display:block;margin-bottom:.75rem;transition:color .3s;}
-.quad:hover .num{color:#E8B931;}
-.quad h3{font-size:17px;font-weight:700;color:#1B3A5C;margin-bottom:1rem;transition:color .3s;}
-.quad:hover h3{color:#FFF;}
-.quad p{font-size:13.5px;color:#4A5568;line-height:1.75;transition:color .3s;}
-.quad:hover p{color:rgba(255,255,255,.75);}
-.scroll-explore{max-width:1200px;margin:0 auto;padding-top:2rem;text-align:center;}
-.scroll-explore a{font-style:italic;font-size:15px;font-weight:500;color:#B8860B;letter-spacing:.3px;}
-
-/* ── Skills Section ── */
-.skills-sec{background:#FFF;padding:6rem 2rem;}
-.skills-sec .inner{max-width:1200px;margin:0 auto;}
-.skills-header{margin-bottom:3.5rem;}
-.skills-header .label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#9CA3AF;margin-bottom:.6rem;}
-.skills-header-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-.skills-header h2{font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#003554;margin-bottom:.75rem;letter-spacing:-.4px;}
-.skills-header .gold-bar{height:2px;width:60px;background:#B8860B;}
-.skills-header .tagline{font-size:13px;color:#9CA3AF;font-style:italic;max-width:340px;text-align:right;line-height:1.65;}
-.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-.skill-card{display:flex;flex-direction:column;background:#FFF;border:1px solid #E5E7EB;border-radius:6px;box-shadow:0 1px 4px rgba(66,86,100,.04);transition:background .3s,border-color .3s,box-shadow .3s,transform .25s;cursor:default;overflow:hidden;}
-.skill-card:hover{background:#003554;border-color:#003554;box-shadow:0 8px 24px rgba(66,86,100,.15);transform:translateY(-3px);}
-.skill-card .card-body{display:flex;align-items:flex-start;gap:1rem;padding:1.4rem 1.5rem;}
-.skill-card .icon-box{flex-shrink:0;width:42px;height:42px;background:#F5F2EA;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background .3s;}
-.skill-card:hover .icon-box{background:rgba(201,168,76,.15);}
-.skill-card .icon-box svg{color:#B8860B;transition:transform .3s;}
-.skill-card:hover .icon-box svg{transform:scale(1.15);}
-.skill-card h3{font-size:13.5px;font-weight:600;color:#003554;margin-bottom:.3rem;line-height:1.3;transition:color .3s;}
-.skill-card:hover h3{color:#FFF;}
-.skill-card .desc{font-size:12px;color:#6B7280;line-height:1.55;transition:color .3s;}
-.skill-card:hover .desc{color:rgba(255,255,255,.58);}
-.skill-bar{height:3px;background:#F0EDE6;margin-top:auto;transition:background .3s;}
-.skill-card:hover .skill-bar{background:rgba(255,255,255,.1);}
-.skill-bar .fill{height:100%;background:#1B3A5C;border-radius:0 2px 2px 0;transition:background .3s;}
-.skill-card:hover .skill-bar .fill{background:#B8860B;}
-
-/* ── Experience/Education ── */
-.exp-sec{background:#ECEAE3;padding:6rem 2rem;}
-.exp-sec .inner{max-width:1200px;margin:0 auto;}
-.exp-sec .label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#9CA3AF;margin-bottom:.6rem;}
-.exp-sec h2{font-size:clamp(2.2rem,4vw,3rem);font-weight:800;color:#003554;letter-spacing:-.5px;}
-.tab-bar{display:flex;gap:.5rem;margin-bottom:2.5rem;border-bottom:1px solid rgba(0,53,84,.1);}
-.tab-btn{background:transparent;border:none;padding:10px 24px;font-size:15px;font-weight:500;color:#9CA3AF;cursor:pointer;font-family:'Poppins',sans-serif;border-bottom:3px solid transparent;transition:color .3s,border-color .3s;letter-spacing:.3px;}
-.tab-btn.active{font-weight:700;color:#003554;border-bottom-color:#B8860B;}
-.exp-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.exp-card{background:#FFF;border-radius:8px;padding:2rem;transition:transform .3s,box-shadow .3s;cursor:default;display:flex;flex-direction:column;gap:1.5rem;}
-.exp-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,34,68,.12);}
-.exp-card .top{display:flex;align-items:center;gap:.75rem;}
-.exp-card .icon-wrap{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.exp-card .company{font-size:12.5px;font-weight:600;color:#003554;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.exp-card .meta{display:flex;align-items:center;gap:6px;margin-top:2px;}
-.exp-card .meta span{font-size:11px;color:#9CA3AF;}
-.exp-card .meta .sep{color:#D1D5DB;}
-.exp-card .divider{height:1px;background:#F0EDE6;}
-.exp-card .name{font-size:1rem;font-weight:700;color:#003554;margin-bottom:.3rem;line-height:1.35;}
-.exp-card .role{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;margin-bottom:.75rem;word-break:break-word;}
-.exp-card .desc{font-size:13px;color:#6B7280;line-height:1.7;}
-.cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
-.cred-card{background:#F4F5F8;border-radius:16px;padding:2.25rem 1.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .3s,box-shadow .3s;}
-.cred-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(15,34,68,.1);}
-.cred-card .circle{width:80px;height:80px;border-radius:50%;background:#003554;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 6px 20px rgba(15,34,68,.25);}
-.cred-card .circle svg{color:#B8860B;}
-.cred-card h3{font-size:15px;font-weight:700;color:#003554;margin-bottom:.5rem;line-height:1.35;}
-.cred-card .inst{font-size:12.5px;color:#6B7280;line-height:1.5;}
-.edu-header{text-align:center;margin-bottom:2.5rem;}
-.edu-header h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#003554;margin-bottom:.75rem;}
-.edu-header p{font-size:15px;color:#6B7280;max-width:620px;margin:0 auto;line-height:1.7;}
-
-/* ── Contact ── */
-.contact-sec{background:#f7f4f3;padding:6rem 2rem;position:relative;overflow:hidden;}
-.contact-sec .inner{max-width:1100px;margin:0 auto;}
-.contact-sec .header-area{text-align:center;margin-bottom:3.5rem;}
-.contact-sec .divider-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.5rem;}
-.contact-sec .gold-line{width:40px;height:2px;background:#B8860B;display:inline-block;}
-.contact-sec .gold-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#B8860B;}
-.contact-sec h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:#003554;margin-bottom:1.25rem;letter-spacing:-.3px;}
-.contact-sec .sub{font-size:15px;color:#6B7280;font-style:italic;max-width:550px;margin:0 auto;line-height:1.7;}
-.connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch;}
-.contact-card{background:#FFF;border:1.5px solid #E5E7EB;border-radius:16px;padding:2.25rem;display:flex;flex-direction:column;}
-.contact-card .name{font-size:22px;font-weight:800;color:#003554;margin-bottom:.3rem;}
-.contact-card .title{font-size:13.5px;color:#6B7280;}
-.contact-items{display:flex;flex-direction:column;gap:1.25rem;flex:1;margin-top:2rem;}
-.contact-item{display:flex;align-items:center;gap:1rem;}
-.contact-item .ci-icon{width:44px;height:44px;border-radius:10px;background:#003554;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.contact-item .ci-icon svg{color:#B8860B;}
-.contact-item .ci-label{font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;font-weight:600;}
-.contact-item .ci-value{font-size:13.5px;font-weight:600;color:#003554;line-height:1.3;word-break:break-word;}
-.contact-card .sep{height:1px;background:#F0EDE6;margin:1.75rem 0 1.25rem;}
-.contact-card .connect-label{font-size:12px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;margin-bottom:.875rem;font-weight:600;}
-.social-row{display:flex;gap:.75rem;}
-.social-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;transition:background .3s,transform .2s;}
-.social-btn.linkedin{background:#003554;}
-.social-btn.linkedin:hover{background:#B8860B;transform:translateY(-2px);}
-.social-btn.whatsapp{background:#25D366;}
-.social-btn.whatsapp:hover{transform:translateY(-2px);}
-.form-card{background:#FFF;border:1.5px solid #E5E7EB;border-radius:16px;padding:2.25rem;display:flex;flex-direction:column;}
-.form-card form{display:flex;flex-direction:column;gap:1.1rem;flex:1;}
-.form-card label{display:block;font-size:13.5px;font-weight:600;color:#003554;margin-bottom:6px;}
-.form-card input,.form-card textarea{width:100%;padding:13px 16px;border:1.5px solid #E5E7EB;border-radius:10px;font-size:14px;font-family:'Poppins',sans-serif;color:#1A1A2E;outline:none;background:#FFF;transition:border-color .25s;}
-.form-card input:focus,.form-card textarea:focus{border-color:#003554;}
-.form-card input::placeholder,.form-card textarea::placeholder{color:#B0AAA0;}
-.form-card textarea{resize:vertical;min-height:80px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-card .submit-btn{width:100%;padding:15px;background:#003554;color:#FFF;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:.3px;margin-top:auto;transition:background .3s,transform .2s;}
-.form-card .submit-btn:hover{background:#B8860B;color:#003554;transform:translateY(-1px);}
-
-/* ── Footer ── */
-.footer{background:#071729;padding:2.5rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,.15);}
-.footer .mono{width:36px;height:36px;border:1.5px solid rgba(201,168,76,.5);border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#C9A84C;margin:0 auto 1.25rem;letter-spacing:.5px;}
-.footer .quote{font-size:13.5px;color:rgba(255,255,255,.4);font-style:italic;margin-bottom:.75rem;letter-spacing:.3px;}
-.footer .copy{font-size:11.5px;color:rgba(255,255,255,.2);letter-spacing:.5px;}
-
-/* ── WhatsApp FAB ── */
-.wa-fab{position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .3s,box-shadow .3s;}
-.wa-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,.5);}
+img{display:block;}
 
 /* ── Animations ── */
 @keyframes greenPulse{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.6);}50%{box-shadow:0 0 0 6px rgba(74,222,128,0);}}
-@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(calc(-100%/3));}}
+@keyframes skillsScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes fadeInNav{from{opacity:0;}to{opacity:1;}}
+
+/* ── Header ── */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#003554;transition:box-shadow 0.4s ease;padding:0 2rem;}
+.header.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.25);}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;position:relative;}
+.header-left{display:flex;align-items:center;}
+.header-icons{display:flex;align-items:center;gap:10px;margin-right:20px;margin-left:-76px;}
+.header-icon{width:28px;height:28px;border-radius:6px;background-color:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background-color 0.25s ease;}
+.header-icon.li:hover{background-color:#0077b5;}
+.header-icon.wa:hover{background-color:#25D366;}
+.header-logo{text-decoration:none;display:flex;align-items:center;gap:10px;}
+.green-dot{width:10px;height:10px;border-radius:50%;background-color:#4ADE80;display:inline-block;flex-shrink:0;animation:greenPulse 2s ease-in-out infinite;}
+.header-name{font-size:20px;font-weight:700;color:#FFFFFF;letter-spacing:0.5px;}
+.desktop-nav{display:flex;gap:2.5rem;align-items:center;}
+.nav-link{text-decoration:none;color:rgba(255,255,255,0.7);font-family:'Poppins',sans-serif;font-size:14px;font-weight:400;letter-spacing:0.3px;padding-bottom:4px;border-bottom:2px solid transparent;transition:color 0.3s ease,border-color 0.3s ease;}
+.nav-link:hover{color:#FFFFFF;}
+.nav-link.active{color:#FFFFFF;font-weight:600;border-bottom-color:#B8860B;}
+.nav-collab{font-weight:500 !important;}
+.nav-collab:hover{color:#B8860B !important;}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;color:#FFFFFF;padding:4px;}
+
+/* ── Hero ── */
+.hero{min-height:auto;background-color:#f5f1ed;display:flex;flex-direction:column;justify-content:center;position:relative;padding-top:60px;}
+.hero-grid{max-width:1200px;margin:0 auto;padding:1.5rem 2rem 0.5rem;width:100%;box-sizing:border-box;display:grid;grid-template-columns:1.2fr 0.8fr;gap:3rem;align-items:center;flex:1;}
+.hero-welcome{font-style:italic;font-size:16px;color:#003554;margin:0 0 1rem;}
+.hero h1{font-size:clamp(2.4rem,4.5vw,4.1rem);font-weight:700;color:#003554;line-height:1.1;margin:0 0 0.5rem;letter-spacing:-0.5px;}
+.hero-bar{width:200px;height:4px;background-color:#B8860B;border-radius:2px;margin-bottom:2rem;}
+.hero-body p{font-size:15px;color:#3A3A3A;line-height:1.8;margin:0 0 1rem;max-width:500px;font-family:'Poppins',sans-serif;}
+.hero-body p strong{color:#003554;font-weight:700;}
+.hero-quote{font-family:'Poppins',sans-serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);color:#003554;line-height:1.7;margin:0 0 1rem;max-width:500px;border-left:3px solid #B8860B;padding-left:16px;}
+.hero-quote strong{font-weight:700;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:2rem;}
+.btn-collab{background-color:#003554;color:#FFFFFF;border:none;padding:10px 22px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:background-color 0.3s ease,transform 0.2s ease;}
+.btn-collab:hover{transform:translateY(-2px);}
+.btn-cv{background-color:transparent;color:#003554;border:2px solid #003554;padding:9px 22px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background-color 0.3s ease,color 0.3s ease,transform 0.2s ease;}
+.btn-cv:hover{background-color:#003554;color:#FFFFFF;transform:translateY(-2px);}
+.hero-stats{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem;}
+.hero-stats a{font-size:14px;font-weight:700;color:#003554;text-decoration:underline;text-underline-offset:3px;font-family:'Poppins',sans-serif;}
+.hero-photo-area{display:flex;justify-content:center;align-items:flex-end;margin-bottom:-1.75rem;}
+.hero-photo-area img{width:100%;height:auto;object-fit:contain;max-height:600px;max-width:480px;}
+
+/* ── Skills Ribbon ── */
+.ribbon{background-color:#003554;padding:1.75rem 0;overflow:hidden;position:relative;}
+.ribbon-track{display:flex;align-items:center;gap:2.5rem;animation:skillsScroll 40s linear infinite;width:max-content;}
+.ribbon-item{display:inline-flex;align-items:center;gap:2.5rem;}
+.ribbon-item span.skill-text{font-family:'Poppins',sans-serif;font-style:italic;font-size:clamp(16px,2vw,20px);color:#B8860B;white-space:nowrap;letter-spacing:0.5px;}
+.ribbon-item span.dot{width:6px;height:6px;border-radius:50%;background-color:#FFFFFF;display:inline-block;flex-shrink:0;}
+
+/* ── About ── */
+.about{background-color:#efece6;padding:5rem 2rem;}
+.about-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:8px;overflow:hidden;}
+.about-left{padding:3rem 3rem 3rem 2.5rem;border-right:1px solid rgba(66,86,100,0.15);display:flex;flex-direction:column;justify-content:space-between;}
+.about-label{display:flex;align-items:center;gap:12px;margin-bottom:2rem;}
+.about-label .line{width:40px;height:2px;background-color:#003554;display:inline-block;}
+.about-label .text{font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#003554;}
+.about h2{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#003554;line-height:1.35;margin:0 0 2rem;letter-spacing:-0.3px;}
+.about-left p{font-family:'Poppins',sans-serif;font-size:15px;color:#3A4A5C;line-height:1.8;margin:0 0 1.25rem;}
+.quad-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+.quad{padding:2rem 1.75rem;cursor:default;position:relative;z-index:1;transition:background-color 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;}
+.quad.top{border-bottom:1px solid rgba(66,86,100,0.15);}
+.quad.left{border-right:1px solid rgba(66,86,100,0.15);}
+.quad:hover{background-color:#1B3A5C;transform:scale(1.02);box-shadow:0 8px 30px rgba(27,58,92,0.2);z-index:2;}
+.quad .num{font-family:'Poppins',sans-serif;font-style:italic;font-size:28px;font-weight:500;color:#B8860B;display:block;margin-bottom:0.75rem;transition:color 0.3s ease;}
+.quad:hover .num{color:#E8B931;}
+.quad h3{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:#1B3A5C;margin:0 0 1rem;transition:color 0.3s ease;}
+.quad:hover h3{color:#FFFFFF;}
+.quad p{font-family:'Poppins',sans-serif;font-size:13.5px;color:#4A5568;line-height:1.75;margin:0;transition:color 0.3s ease;}
+.quad:hover p{color:rgba(255,255,255,0.75);}
+.scroll-explore{max-width:1200px;margin:0 auto;padding-top:2rem;display:flex;justify-content:center;}
+.scroll-explore a{font-family:'Poppins',sans-serif;font-style:italic;font-size:15px;font-weight:500;color:#B8860B;letter-spacing:0.3px;text-decoration:none;display:flex;align-items:center;gap:10px;}
+
+/* ── Skills Section ── */
+.skills-sec{background-color:#FFFFFF;padding:6rem 2rem;}
+.skills-sec .inner{max-width:1200px;margin:0 auto;}
+.skills-header{margin-bottom:3.5rem;}
+.skills-header .label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#9CA3AF;margin:0 0 0.6rem;}
+.skills-header-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.skills-header h2{font-family:'Poppins',sans-serif;font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#003554;margin:0 0 0.75rem;letter-spacing:-0.4px;}
+.gold-bar{height:2px;width:60px;background-color:#B8860B;}
+.skills-header .tagline{font-size:13px;color:#9CA3AF;font-style:italic;max-width:340px;text-align:right;line-height:1.65;margin:0;}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.skill-card{display:flex;flex-direction:column;background-color:#FFFFFF;border:1px solid #E5E7EB;border-radius:6px;box-shadow:0 1px 4px rgba(66,86,100,0.04);transition:background-color 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease,transform 0.25s ease;cursor:default;overflow:hidden;}
+.skill-card:hover{background-color:#003554;border-color:#003554;box-shadow:0 8px 24px rgba(66,86,100,0.15);transform:translateY(-3px);}
+.skill-card .card-body{display:flex;align-items:flex-start;gap:1rem;padding:1.4rem 1.5rem;}
+.skill-card .icon-box{flex-shrink:0;width:42px;height:42px;background-color:#F5F2EA;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background-color 0.3s ease;}
+.skill-card:hover .icon-box{background-color:rgba(201,168,76,0.15);}
+.skill-card .icon-box svg{transition:transform 0.3s ease;}
+.skill-card:hover .icon-box svg{transform:scale(1.15);}
+.skill-card h3{font-size:13.5px;font-weight:600;color:#003554;margin:0 0 0.3rem;line-height:1.3;transition:color 0.3s ease;}
+.skill-card:hover h3{color:#FFFFFF;}
+.skill-card .desc{font-size:12px;color:#6B7280;margin:0;line-height:1.55;transition:color 0.3s ease;}
+.skill-card:hover .desc{color:rgba(255,255,255,0.58);}
+.skill-bar{height:3px;background-color:#F0EDE6;margin-top:auto;transition:background-color 0.3s ease;}
+.skill-card:hover .skill-bar{background-color:rgba(255,255,255,0.1);}
+.skill-bar .fill{height:100%;background-color:#1B3A5C;border-radius:0 2px 2px 0;transition:background-color 0.3s ease;}
+.skill-card:hover .skill-bar .fill{background-color:#B8860B;}
+
+/* ── Experience/Education ── */
+.exp-sec{background-color:#ECEAE3;padding:6rem 2rem;}
+.exp-sec .inner{max-width:1200px;margin:0 auto;}
+.exp-sec .label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#9CA3AF;margin:0 0 0.6rem;}
+.exp-sec h2{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,4vw,3rem);font-weight:800;color:#003554;margin:0;letter-spacing:-0.5px;}
+.tab-bar{display:flex;gap:0.5rem;margin-bottom:2.5rem;border-bottom:1px solid rgba(0,53,84,0.1);}
+.tab-btn{background-color:transparent;border:none;padding:10px 24px;font-size:15px;font-weight:500;color:#9CA3AF;cursor:pointer;font-family:'Poppins',sans-serif;border-bottom:3px solid transparent;transition:color 0.3s ease,border-color 0.3s ease;letter-spacing:0.3px;}
+.tab-btn.active{font-weight:700;color:#003554;border-bottom-color:#B8860B;}
+.exp-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.exp-card{background-color:#FFFFFF;border-radius:8px;padding:2rem;transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:default;display:flex;flex-direction:column;gap:1.5rem;}
+.exp-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,34,68,0.12);}
+.exp-card .top{display:flex;align-items:center;gap:0.75rem;}
+.exp-card .icon-wrap{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.exp-card .company-name{font-size:12.5px;font-weight:600;color:#003554;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.exp-card .meta{display:flex;align-items:center;gap:6px;margin-top:2px;}
+.exp-card .meta span{font-size:11px;color:#9CA3AF;}
+.exp-card .meta .sep{color:#D1D5DB;}
+.exp-card .line{height:1px;background-color:#F0EDE6;}
+.exp-card .display-name{font-size:1rem;font-weight:700;color:#003554;margin:0 0 0.3rem;line-height:1.35;}
+.exp-card .role{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;margin-bottom:0.75rem;word-break:break-word;overflow-wrap:break-word;}
+.exp-card .desc{font-size:13px;color:#6B7280;line-height:1.7;margin:0;}
+.cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.cred-card{background-color:#F4F5F8;border-radius:16px;padding:2.25rem 1.5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.cred-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(15,34,68,0.1);}
+.cred-card .circle{width:80px;height:80px;border-radius:50%;background-color:#003554;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;box-shadow:0 6px 20px rgba(15,34,68,0.25);}
+.cred-card h3{font-size:15px;font-weight:700;color:#003554;margin:0 0 0.5rem;line-height:1.35;}
+.cred-card .inst{font-size:12.5px;color:#6B7280;margin:0;line-height:1.5;}
+.edu-header{text-align:center;margin-bottom:2.5rem;}
+.edu-header h3{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#003554;margin:0 0 0.75rem;}
+.edu-header p{font-size:15px;color:#6B7280;max-width:620px;margin:0 auto;line-height:1.7;}
+
+/* ── Contact ── */
+.contact-sec{background-color:#f7f4f3;padding:6rem 2rem;position:relative;overflow:hidden;}
+.contact-sec .inner{max-width:1100px;margin:0 auto;}
+.contact-header{text-align:center;margin-bottom:3.5rem;}
+.divider-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:1.5rem;}
+.gold-line{width:40px;height:2px;background-color:#B8860B;display:inline-block;}
+.gold-label{font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#B8860B;}
+.contact-sec h2{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:#003554;margin:0 0 1.25rem;letter-spacing:-0.3px;}
+.contact-sec .sub{font-size:15px;color:#6B7280;font-style:italic;max-width:550px;margin:0 auto;line-height:1.7;}
+.connect-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch;}
+.contact-card{background-color:#FFFFFF;border:1.5px solid #E5E7EB;border-radius:16px;padding:2.25rem;display:flex;flex-direction:column;}
+.contact-card .card-name{font-size:22px;font-weight:800;color:#003554;margin:0 0 0.3rem;}
+.contact-card .card-title{font-size:13.5px;color:#6B7280;margin:0;}
+.contact-items{display:flex;flex-direction:column;gap:1.25rem;flex:1;margin-top:2rem;}
+.contact-item{display:flex;align-items:center;gap:1rem;text-decoration:none;}
+.ci-icon{width:44px;height:44px;border-radius:10px;background-color:#003554;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ci-label{font-size:11px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;font-weight:600;}
+.ci-value{font-size:13.5px;font-weight:600;color:#003554;line-height:1.3;word-break:break-word;}
+.contact-sep{height:1px;background-color:#F0EDE6;margin:1.75rem 0 1.25rem;}
+.connect-label{font-size:12px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;margin:0 0 0.875rem;font-weight:600;}
+.social-row{display:flex;gap:0.75rem;}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;text-decoration:none;transition:background-color 0.3s ease,transform 0.2s ease;}
+.social-btn.linkedin{background-color:#003554;}
+.social-btn.linkedin:hover{background-color:#B8860B;transform:translateY(-2px);}
+.social-btn.whatsapp{background-color:#25D366;}
+.social-btn.whatsapp:hover{transform:translateY(-2px);}
+.form-card{background-color:#FFFFFF;border:1.5px solid #E5E7EB;border-radius:16px;padding:2.25rem;display:flex;flex-direction:column;}
+.form-card form{display:flex;flex-direction:column;gap:1.1rem;flex:1;}
+.form-card label{display:block;font-size:13.5px;font-weight:600;color:#003554;margin-bottom:6px;}
+.form-input{width:100%;box-sizing:border-box;padding:13px 16px;border:1.5px solid #E5E7EB;border-radius:10px;font-size:14px;font-family:'Poppins',sans-serif;color:#1A1A2E;outline:none;background-color:#FFFFFF;transition:border-color 0.25s ease;}
+.form-input:focus{border-color:#003554;}
+.form-input::placeholder{color:#B0AAA0;}
+textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-serif;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.submit-btn{width:100%;padding:15px;background-color:#003554;color:#FFFFFF;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;letter-spacing:0.3px;margin-top:auto;transition:background-color 0.3s ease,color 0.3s ease,transform 0.2s ease;}
+.submit-btn:hover{background-color:#B8860B;color:#003554;transform:translateY(-1px);}
+
+/* ── Footer ── */
+.footer{background-color:#071729;padding:2.5rem 2rem;text-align:center;border-top:1px solid rgba(201,168,76,0.15);}
+.footer .mono{width:36px;height:36px;border:1.5px solid rgba(201,168,76,0.5);border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#C9A84C;margin:0 auto 1.25rem;letter-spacing:0.5px;}
+.footer .quote{font-size:13.5px;color:rgba(255,255,255,0.4);font-style:italic;margin:0 0 0.75rem;letter-spacing:0.3px;}
+.footer .copy{font-size:11.5px;color:rgba(255,255,255,0.2);margin:0;letter-spacing:0.5px;}
+
+/* ── WhatsApp FAB ── */
+.wa-fab{position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background-color:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;}
+.wa-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,0.5);}
+
+/* ── Mobile Overlay ── */
+.mobile-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background-color:#003554;flex-direction:column;align-items:center;justify-content:center;gap:2rem;animation:fadeInNav 0.3s ease;}
+.mobile-overlay.open{display:flex;}
+.mobile-overlay a{color:#FFFFFF;font-family:'Poppins',sans-serif;font-size:24px;font-weight:500;letter-spacing:0.5px;transition:color 0.3s ease;text-decoration:none;}
+.mobile-overlay .close-btn{position:absolute;top:18px;right:2rem;background:none;border:none;color:#FFFFFF;cursor:pointer;font-size:28px;padding:4px;}
 
 /* ── Responsive ── */
-@media(max-width:1024px){.skills-grid,.cred-grid{grid-template-columns:repeat(2,1fr)!important;}.exp-card-grid{grid-template-columns:repeat(2,1fr)!important;}}
-@media(max-width:900px){.desktop-nav{display:none!important;}.mobile-menu-btn{display:block!important;}.hero-grid{grid-template-columns:1fr!important;padding-top:2rem!important;}.hero-photo{order:-1;max-width:280px;margin:0 auto;}.about-grid{grid-template-columns:1fr!important;}.connect-grid{grid-template-columns:1fr!important;}}
-@media(max-width:640px){.skills-grid,.cred-grid,.exp-card-grid{grid-template-columns:1fr!important;}.skills-header .tagline{text-align:left!important;}.form-row{grid-template-columns:1fr!important;}}
+@media(max-width:1024px){
+  .skills-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .cred-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .exp-card-grid{grid-template-columns:repeat(2,1fr) !important;}
+}
+@media(max-width:900px){
+  .desktop-nav{display:none !important;}
+  .mobile-menu-btn{display:block !important;}
+  .hero-grid{grid-template-columns:1fr !important;padding-top:2rem !important;}
+  .hero-photo-area{order:-1;max-width:280px;margin:0 auto;}
+  .about-grid{grid-template-columns:1fr !important;}
+  .connect-grid{grid-template-columns:1fr !important;}
+  .header-icons{margin-left:0 !important;}
+}
+@media(max-width:640px){
+  .skills-grid{grid-template-columns:1fr !important;}
+  .cred-grid{grid-template-columns:1fr !important;}
+  .exp-card-grid{grid-template-columns:1fr !important;}
+  .skills-header .tagline{text-align:left !important;}
+  .form-row{grid-template-columns:1fr !important;}
+}
 </style>
 </head>
 <body>
 
-<!-- ══════ HEADER ══════ -->
-<header class="header" id="site-header">
+<!-- HEADER -->
+<header class="header" id="siteHeader">
 <div class="header-inner">
   <div class="header-left">
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer" class="social-icon li">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    <div class="header-icons">
+      <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer" class="header-icon li">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
-      <a href="https://wa.me/971525076563" target="_blank" rel="noopener noreferrer" class="social-icon wa">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <a href="https://wa.me/971525076563" target="_blank" rel="noopener noreferrer" class="header-icon wa">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
       </a>
     </div>
-    <a href="#hero" class="header-name" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
+    <a href="#hero" class="header-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
       <span class="green-dot"></span>
-      <span>Mishant Gandhi</span>
+      <span class="header-name">Mishant Gandhi</span>
     </a>
   </div>
   <nav class="desktop-nav" id="desktopNav">
-    <a href="#hero" class="active" onclick="navClick(event,'#hero')">Home</a>
-    <a href="#about-me" onclick="navClick(event,'#about-me')">About</a>
-    <a href="#skills" onclick="navClick(event,'#skills')">Skills</a>
-    <a href="#experience" onclick="navClick(event,'#experience')">Experience</a>
-    <a href="#connect" class="collab" onclick="navClick(event,'#connect')">Let's collaborate</a>
+    <a href="#hero" class="nav-link active" data-id="hero" onclick="navClick(event,this)">Home</a>
+    <a href="#about-me" class="nav-link" data-id="about-me" onclick="navClick(event,this)">About</a>
+    <a href="#skills" class="nav-link" data-id="skills" onclick="navClick(event,this)">Skills</a>
+    <a href="#experience" class="nav-link" data-id="experience" onclick="navClick(event,this)">Experience</a>
+    <a href="#connect" class="nav-link nav-collab" data-id="connect" onclick="navClick(event,this)">Let's collaborate</a>
   </nav>
-  <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+  <button class="mobile-menu-btn" onclick="toggleMobile()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </div>
 </header>
 
-<!-- Mobile overlay -->
-<div id="mobileOverlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:#003554;flex-direction:column;align-items:center;justify-content:center;gap:2rem;">
-  <button onclick="toggleMobileMenu()" style="position:absolute;top:18px;right:2rem;background:none;border:none;color:#FFF;cursor:pointer;font-size:28px;">&times;</button>
-  <a href="#hero" onclick="navClick(event,'#hero')" style="color:#FFF;font-size:24px;font-weight:500;">Home</a>
-  <a href="#about-me" onclick="navClick(event,'#about-me')" style="color:#FFF;font-size:24px;font-weight:500;">About</a>
-  <a href="#skills" onclick="navClick(event,'#skills')" style="color:#FFF;font-size:24px;font-weight:500;">Skills</a>
-  <a href="#experience" onclick="navClick(event,'#experience')" style="color:#FFF;font-size:24px;font-weight:500;">Experience</a>
-  <a href="#connect" onclick="navClick(event,'#connect')" style="color:#B8860B;font-size:24px;font-weight:600;">Let's collaborate</a>
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <button class="close-btn" onclick="toggleMobile()">&times;</button>
+  <a href="#hero" onclick="mobileNav(event,'#hero')">Home</a>
+  <a href="#about-me" onclick="mobileNav(event,'#about-me')">About</a>
+  <a href="#skills" onclick="mobileNav(event,'#skills')">Skills</a>
+  <a href="#experience" onclick="mobileNav(event,'#experience')">Experience</a>
+  <a href="#connect" onclick="mobileNav(event,'#connect')" style="color:#B8860B;font-weight:600;">Let's collaborate</a>
 </div>
 
-<!-- ══════ HERO ══════ -->
+<!-- HERO -->
 <section id="hero" class="hero">
 <div class="hero-grid">
   <div>
     <p class="hero-welcome">Turning financial complexity into boardroom clarity.</p>
     <h1>Hello, I'm Mishant.</h1>
     <div class="hero-bar"></div>
-    <p>A <strong>Chartered Accountant</strong> and <strong>Company Secretary</strong> with 13+ years across multinationals — I help organisations turn complex financial data into structured control, clear reporting, and decisions that drive performance.</p>
-    <p class="hero-quote"><em>I believe numbers should not just report the past — they should illuminate the <strong>path forward</strong>.</em></p>
-    <p>I have worked with organisations including <strong>Al Futtaim Engineering, Essar Group, Reliance Communications</strong>, and <strong>UAE Investor Family Office</strong>. Currently serving as Senior Manager — Finance &amp; Audit at <strong>Dubai Electricity and Water Authority (DEWA)</strong>.</p>
+    <div class="hero-body">
+      <p>A <strong>Chartered Accountant</strong> and <strong>Company Secretary</strong> with 13+ years across multinationals — I help organisations turn complex financial data into structured control, clear reporting, and decisions that drive performance.</p>
+      <p class="hero-quote"><em>I believe numbers should not just report the past — they should illuminate the <strong>path forward</strong>.</em></p>
+      <p>I have worked with organisations including <strong>Al Futtaim Engineering, Essar Group, Reliance Communications</strong>, and <strong>UAE Investor Family Office</strong>. Currently serving as Senior Manager — Finance &amp; Audit at <strong>Dubai Electricity and Water Authority (DEWA)</strong>.</p>
+    </div>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="document.querySelector('#connect').scrollIntoView({behavior:'smooth'})">
+      <button class="btn-collab" onclick="document.querySelector('#connect').scrollIntoView({behavior:'smooth'})">
         <span class="green-dot" style="width:8px;height:8px;"></span> Let's Collaborate
       </button>
-      <a href="mailto:mishant.gandhi@gmail.com?subject=CV%20Request&body=Hi%20Mishant%2C%0A%0AI%20would%20like%20to%20request%20your%20CV.%0A%0ARegards" class="btn-outline">Request My CV</a>
+      <a href="mailto:mishant.gandhi@gmail.com?subject=CV%20Request&body=Hi%20Mishant%2C%0A%0AI%20would%20like%20to%20request%20your%20CV.%0A%0ARegards" class="btn-cv">Request My CV</a>
     </div>
     <div class="hero-stats">
       <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer">5,214 followers</a>
-      <span class="dot">&middot;</span>
+      <span style="color:#8A8577;font-size:14px;">&middot;</span>
       <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer">5,000+ connections</a>
-      <span class="on-li">on LinkedIn</span>
+      <span style="font-size:13px;color:#8A8577;margin-left:4px;font-family:'Poppins',sans-serif;">on LinkedIn</span>
     </div>
   </div>
-  <div class="hero-photo">
-    <img src="mishant-photo.png" alt="Mishant Gandhi">
+  <div class="hero-photo-area">
+    <div style="width:100%;max-width:480px;display:flex;align-items:flex-end;justify-content:center;">
+      <img src="mishant-photo.png" alt="Mishant Gandhi" loading="eager">
+    </div>
   </div>
 </div>
 </section>
 
-<!-- ══════ SKILLS RIBBON ══════ -->
-<div class="ribbon">
+<!-- SKILLS RIBBON -->
+<section class="ribbon">
 <div class="ribbon-track" id="ribbonTrack"></div>
-</div>
+</section>
 
-<!-- ══════ ABOUT ══════ -->
+<!-- ABOUT -->
 <section id="about-me" class="about">
 <div class="about-grid">
   <div class="about-left">
     <div>
-      <div class="about-label"><span class="line"></span><span>About Mishant</span></div>
+      <div class="about-label"><span class="line"></span><span class="text">About Mishant</span></div>
       <h2>I am a finance professional driven by clarity, precision, and impact.</h2>
       <p>I bring clarity and structure to complex financial environments. With over a decade of experience in IFRS, consolidation, and reporting.</p>
       <p>My focus is on moving beyond reporting to enable performance, control, and strategic alignment. I work closely with stakeholders to turn financial information into outcomes that matter.</p>
     </div>
   </div>
   <div class="quad-grid">
-    <div class="quad"><span class="num">01</span><h3>Financial Control</h3><p>Establishing strong controls, governance, and reporting frameworks to ensure accuracy, compliance, and reliability across financial systems.</p></div>
-    <div class="quad"><span class="num">02</span><h3>Group Consolidation</h3><p>Overseeing multi-entity financials, intercompany reconciliations, and group reporting with clarity and consistency.</p></div>
-    <div class="quad"><span class="num">03</span><h3>Performance &amp; Planning</h3><p>Building budgets, forecasts, and performance analysis that enable management to act with confidence.</p></div>
+    <div class="quad top left"><span class="num">01</span><h3>Financial Control</h3><p>Establishing strong controls, governance, and reporting frameworks to ensure accuracy, compliance, and reliability across financial systems.</p></div>
+    <div class="quad top"><span class="num">02</span><h3>Group Consolidation</h3><p>Overseeing multi-entity financials, intercompany reconciliations, and group reporting with clarity and consistency.</p></div>
+    <div class="quad left"><span class="num">03</span><h3>Performance &amp; Planning</h3><p>Building budgets, forecasts, and performance analysis that enable management to act with confidence.</p></div>
     <div class="quad"><span class="num">04</span><h3>Process &amp; Transformation</h3><p>Improving systems, automating workflows, and strengthening processes to create efficient and future-ready finance functions.</p></div>
   </div>
 </div>
 <div class="scroll-explore"><a href="#skills" onclick="event.preventDefault();document.querySelector('#skills').scrollIntoView({behavior:'smooth'});">······· Scroll to explore</a></div>
 </section>
 
-<!-- ══════ SKILLS ══════ -->
+<!-- SKILLS -->
 <section id="skills" class="skills-sec">
 <div class="inner">
   <div class="skills-header">
@@ -310,7 +342,7 @@ a{text-decoration:none;}
 </div>
 </section>
 
-<!-- ══════ EXPERIENCE / EDUCATION ══════ -->
+<!-- EXPERIENCE / EDUCATION -->
 <section id="experience" class="exp-sec">
 <div class="inner">
   <div style="margin-bottom:2rem;">
@@ -326,24 +358,23 @@ a{text-decoration:none;}
 </div>
 </section>
 
-<!-- ══════ CONTACT ══════ -->
+<!-- CONTACT -->
 <section id="connect" class="contact-sec">
 <div class="inner">
-  <div class="header-area">
+  <div class="contact-header">
     <div class="divider-row"><span class="gold-line"></span><span class="gold-label">Get in Touch</span><span class="gold-line"></span></div>
     <h2>Let's Connect</h2>
     <p class="sub">Open to leadership roles, consulting engagements, and strategic partnerships. Reach out via any channel below.</p>
   </div>
   <div class="connect-grid">
-    <!-- Info Card -->
     <div class="contact-card">
-      <div style="margin-bottom:2rem;"><div class="name">Mishant Gandhi</div><div class="title">Senior Finance Professional</div></div>
+      <div style="margin-bottom:2rem;"><div class="card-name">Mishant Gandhi</div><div class="card-title">Senior Finance Professional</div></div>
       <div class="contact-items">
-        <a href="mailto:mishant.gandhi@gmail.com" class="contact-item" style="text-decoration:none;">
+        <a href="mailto:mishant.gandhi@gmail.com" class="contact-item">
           <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div><div class="ci-label">Email</div><div class="ci-value">mishant.gandhi@gmail.com</div></div>
         </a>
-        <a href="tel:+971525076563" class="contact-item" style="text-decoration:none;">
+        <a href="tel:+971525076563" class="contact-item">
           <div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <div><div class="ci-label">Phone</div><div class="ci-value">+971 52 507 6563</div></div>
         </a>
@@ -352,28 +383,21 @@ a{text-decoration:none;}
           <div><div class="ci-label">Location</div><div class="ci-value">Dubai, United Arab Emirates</div></div>
         </div>
       </div>
-      <div class="sep"></div>
+      <div class="contact-sep"></div>
       <p class="connect-label">Connect with me</p>
       <div class="social-row">
         <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer" class="social-btn linkedin"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://wa.me/971525076563" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
       </div>
     </div>
-    <!-- Form Card -->
     <div class="form-card">
       <form id="contactForm" onsubmit="handleContact(event)">
-        <div>
-          <label>Your Name</label>
-          <input type="text" id="cName" placeholder="Enter your name" required>
-        </div>
+        <div><label>Your Name</label><input type="text" id="cName" class="form-input" placeholder="Enter your name" required></div>
         <div class="form-row">
-          <div><label>Email Address</label><input type="email" id="cEmail" placeholder="Enter your email" required></div>
-          <div><label>Contact Number</label><input type="tel" id="cPhone" placeholder="+971 XX XXX XXXX"></div>
+          <div><label>Email Address</label><input type="email" id="cEmail" class="form-input" placeholder="Enter your email" required></div>
+          <div><label>Contact Number</label><input type="tel" id="cPhone" class="form-input" placeholder="+971 XX XXX XXXX"></div>
         </div>
-        <div>
-          <label>Your Message</label>
-          <textarea id="cMsg" placeholder="Tell me about the opportunity" rows="3"></textarea>
-        </div>
+        <div><label>Your Message</label><textarea id="cMsg" class="form-input" placeholder="Tell me about the opportunity" rows="3"></textarea></div>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
     </div>
@@ -381,7 +405,7 @@ a{text-decoration:none;}
 </div>
 </section>
 
-<!-- ══════ FOOTER ══════ -->
+<!-- FOOTER -->
 <footer class="footer">
 <div style="max-width:1200px;margin:0 auto;">
   <div class="mono">MG</div>
@@ -390,55 +414,60 @@ a{text-decoration:none;}
 </div>
 </footer>
 
-<!-- ══════ WHATSAPP FAB ══════ -->
+<!-- WHATSAPP FAB -->
 <a href="https://wa.me/971525076563" target="_blank" rel="noopener noreferrer" class="wa-fab">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// ── Data ──
-var ribbonSkills=['Financial Reporting (IFRS)','Group Consolidation & Audit','Financial Planning & Analysis','ERP Implementation (SAP, D365)','Power BI & Dashboarding','Business Partnering','ICV Audit — UAE & Qatar','VAT & Tax Compliance'];
-var skillsData=[
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',title:'Financial Reporting & IFRS',desc:'End-to-end IFRS-compliant financial reporting across multiple entities',pct:95},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',title:'Group Consolidation & Audit',desc:'Multi-entity consolidations and statutory audit coordination',pct:92},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>',title:'Financial Planning & Analysis',desc:'Budgets, forecasts, variance analysis & strategic insights to leadership',pct:90},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',title:'ERP Implementation (SAP, D365)',desc:'SAP and Microsoft Dynamics 365 finance module rollouts',pct:87},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',title:'Power BI & Dashboarding',desc:'Real-time business intelligence dashboards for decision-making',pct:85},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',title:'Business Partnering',desc:'Trusted strategic finance partner to cross-functional leadership teams',pct:90},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',title:'ICV Audit — UAE & Qatar',desc:'In-Country Value economic contribution audits and compliance certification',pct:88},
-{icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',title:'VAT & Tax Compliance',desc:'UAE VAT returns, refunds, and multi-jurisdiction tax governance',pct:86}
-];
-var experiences=[
-{color:'#0891B2',company:'Dubai Electricity and Water Authority',location:'Dubai, UAE',displayName:'Dubai Electricity & Water Authority',years:'2024 — Present',role:'Sr. Manager — Finance and Audit',desc:"Complete financial reporting and internal & external audit management for DEWA's subsidiary. Stakeholder reporting, corporate governance, and regulatory compliance including VAT returns and refunds."},
-{color:'#059669',company:'Al Futtaim Engineering and Technologies',location:'Dubai, UAE',displayName:'Al Futtaim Engineering & Technologies',years:'2022 — 2024',role:'Revenue Controller',desc:'In-country valuations and reports for UAE and Qatar businesses. Managed internal, half-year, interim, and external audit assignments, plus Contractors Classification certification for Abu Dhabi government opportunities.'},
-{color:'#B8860B',company:'Essar Group',location:'Dubai, UAE',displayName:'Essar Group',years:'2017 — 2022',role:'Sr. Manager — Financial Reporting',desc:'Financial consolidation and reporting, secretarial compliance and corporate governance across the Essar Group.'},
-{color:'#DC2626',company:'UAE Investor Family Office',location:'Dubai, UAE',displayName:'UAE Investor Family Office',years:'2016 — 2017',role:'Finance Manager',desc:'Supported investment analysis, financial modelling, and feasibility studies for real estate and diversified investment portfolios based in UAE.'},
-{color:'#7C3AED',company:'Reliance Communication Ltd.',location:'Mumbai, India',displayName:'Reliance Communication Ltd.',years:'2015 — 2016',role:'Assistant Manager — Finance and Accounts',desc:"Handled statutory financial reporting, internal controls, and regulatory compliance in the telecom sector for one of India's largest network operators."},
-{color:'#003554',company:'GOLS Academy',location:'Mumbai, India',displayName:'GOLS Academy',years:'2012 — 2015',role:'Accounts Manager',desc:'Managed Government Grant accounting, working capital, MIS, cash flow, budgetary analysis, fixed assets and logistics operations.'}
-];
-var credentials=[
-{title:'Chartered Accountant (2012)',inst:'The Institute of Chartered Accountants of India'},
-{title:'Company Secretary (2012)',inst:'The Institute of Company Secretaries of India'},
-{title:'Bachelor of Commerce (2008)',inst:'S. P. B. English Medium College of Commerce'},
-{title:'ACCA, IFRS Diploma (2021)',inst:'ACCA Global'}
-];
-
 // ── Ribbon ──
-(function(){var t=document.getElementById('ribbonTrack');var items=[...ribbonSkills,...ribbonSkills,...ribbonSkills];t.innerHTML=items.map(function(s){return '<span class="ribbon-item">'+s+'</span>';}).join('');})();
-
-// ── Skills Grid ──
-(function(){var g=document.getElementById('skillsGrid');g.innerHTML=skillsData.map(function(s){return '<div class="skill-card"><div class="card-body"><div class="icon-box">'+s.icon+'</div><div><h3>'+s.title+'</h3><p class="desc">'+s.desc+'</p></div></div><div class="skill-bar"><div class="fill" style="width:'+s.pct+'%"></div></div></div>';}).join('');})();
-
-// ── Experience Cards ──
-(function(){var c=document.getElementById('expContent');var iconSvgs={'#0891B2':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>','#059669':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>','#B8860B':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>','#DC2626':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>','#7C3AED':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>','#003554':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#003554" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>'};
-c.innerHTML='<div class="exp-card-grid">'+experiences.map(function(e){return '<div class="exp-card"><div class="top"><div class="icon-wrap" style="background:'+e.color+'18">'+iconSvgs[e.color]+'</div><div style="flex:1;min-width:0"><div class="company">'+e.company+'</div><div class="meta"><span>'+e.years+'</span><span class="sep">&middot;</span><span>'+e.location+'</span></div></div></div><div class="divider"></div><div><div class="name">'+e.displayName+'</div><div class="role" style="color:'+e.color+'">'+e.role+'</div><p class="desc">'+e.desc+'</p></div></div>';}).join('')+'</div>';
+(function(){
+  var skills=['Financial Reporting & IFRS','Group Consolidation & Audit','Financial Planning & Analysis','ERP Implementation (SAP, D365)','Power BI & Dashboarding','Business Partnering','ICV Audit — UAE & Qatar','VAT & Tax Compliance'];
+  var doubled=[...skills,...skills];
+  var t=document.getElementById('ribbonTrack');
+  t.innerHTML=doubled.map(function(s){return '<span class="ribbon-item"><span class="skill-text">'+s+'</span><span class="dot"></span></span>';}).join('');
 })();
 
-// ── Education Cards ──
-(function(){var c=document.getElementById('eduContent');var credIcon='<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>';
-var gradIcon='<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>';
-var icons=[credIcon,credIcon,gradIcon,credIcon];
-c.innerHTML='<div class="edu-header"><h3>Qualifications & Certifications</h3><p>Strong academic foundation with professional certifications and continuous learning in finance, technology, and leadership.</p></div><div class="cred-grid">'+credentials.map(function(cr,i){return '<div class="cred-card"><div class="circle">'+icons[i]+'</div><h3>'+cr.title+'</h3><p class="inst">'+cr.inst+'</p></div>';}).join('')+'</div>';
+// ── Skills Grid ──
+(function(){
+  var data=[
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',title:'Financial Reporting & IFRS',desc:'End-to-end IFRS-compliant financial reporting across multiple entities',pct:95},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',title:'Group Consolidation & Audit',desc:'Multi-entity consolidations and statutory audit coordination',pct:92},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>',title:'Financial Planning & Analysis',desc:'Budgets, forecasts, variance analysis & strategic insights to leadership',pct:90},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',title:'ERP Implementation (SAP, D365)',desc:'SAP and Microsoft Dynamics 365 finance module rollouts',pct:87},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',title:'Power BI & Dashboarding',desc:'Real-time business intelligence dashboards for decision-making',pct:85},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',title:'Business Partnering',desc:'Trusted strategic finance partner to cross-functional leadership teams',pct:90},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',title:'ICV Audit — UAE & Qatar',desc:'In-Country Value economic contribution audits and compliance certification',pct:88},
+    {icon:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',title:'VAT & Tax Compliance',desc:'UAE VAT returns, refunds, and multi-jurisdiction tax governance',pct:86}
+  ];
+  var g=document.getElementById('skillsGrid');
+  g.innerHTML=data.map(function(s){return '<div class="skill-card"><div class="card-body"><div class="icon-box">'+s.icon+'</div><div><h3>'+s.title+'</h3><p class="desc">'+s.desc+'</p></div></div><div class="skill-bar"><div class="fill" style="width:'+s.pct+'%"></div></div></div>';}).join('');
+})();
+
+// ── Experience ──
+(function(){
+  var exps=[
+    {color:'#0891B2',company:'Dubai Electricity and Water Authority',loc:'Dubai, UAE',dn:'Dubai Electricity & Water Authority',yrs:'2024 — Present',role:'Sr. Manager — Finance and Audit',desc:"Complete financial reporting and internal & external audit management for DEWA's subsidiary. Stakeholder reporting, corporate governance, and regulatory compliance including VAT returns and refunds.",icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'},
+    {color:'#059669',company:'Al Futtaim Engineering and Technologies',loc:'Dubai, UAE',dn:'Al Futtaim Engineering & Technologies',yrs:'2022 — 2024',role:'Revenue Controller',desc:'In-country valuations and reports for UAE and Qatar businesses. Managed internal, half-year, interim, and external audit assignments, plus Contractors Classification certification for Abu Dhabi government opportunities.',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'},
+    {color:'#B8860B',company:'Essar Group',loc:'Dubai, UAE',dn:'Essar Group',yrs:'2017 — 2022',role:'Sr. Manager — Financial Reporting',desc:'Financial consolidation and reporting, secretarial compliance and corporate governance across the Essar Group.',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>'},
+    {color:'#DC2626',company:'UAE Investor Family Office',loc:'Dubai, UAE',dn:'UAE Investor Family Office',yrs:'2016 — 2017',role:'Finance Manager',desc:'Supported investment analysis, financial modelling, and feasibility studies for real estate and diversified investment portfolios based in UAE.',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>'},
+    {color:'#7C3AED',company:'Reliance Communication Ltd.',loc:'Mumbai, India',dn:'Reliance Communication Ltd.',yrs:'2015 — 2016',role:'Assistant Manager — Finance and Accounts',desc:"Handled statutory financial reporting, internal controls, and regulatory compliance in the telecom sector for one of India's largest network operators.",icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>'},
+    {color:'#003554',company:'GOLS Academy',loc:'Mumbai, India',dn:'GOLS Academy',yrs:'2012 — 2015',role:'Accounts Manager',desc:'Managed Government Grant accounting, working capital, MIS, cash flow, budgetary analysis, fixed assets and logistics operations.',icon:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#003554" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>'}
+  ];
+  var c=document.getElementById('expContent');
+  c.innerHTML='<div class="exp-card-grid">'+exps.map(function(e){return '<div class="exp-card"><div class="top"><div class="icon-wrap" style="background-color:'+e.color+'18">'+e.icon+'</div><div style="flex:1;min-width:0"><div class="company-name">'+e.company+'</div><div class="meta"><span>'+e.yrs+'</span><span class="sep">&middot;</span><span>'+e.loc+'</span></div></div></div><div class="line"></div><div><div class="display-name">'+e.dn+'</div><div class="role" style="color:'+e.color+'">'+e.role+'</div><p class="desc">'+e.desc+'</p></div></div>';}).join('')+'</div>';
+})();
+
+// ── Education ──
+(function(){
+  var creds=[
+    {title:'Chartered Accountant (2012)',inst:'The Institute of Chartered Accountants of India',icon:'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>'},
+    {title:'Company Secretary (2012)',inst:'The Institute of Company Secretaries of India',icon:'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>'},
+    {title:'Bachelor of Commerce (2008)',inst:'S. P. B. English Medium College of Commerce',icon:'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>'},
+    {title:'ACCA, IFRS Diploma (2021)',inst:'ACCA Global',icon:'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>'}
+  ];
+  var c=document.getElementById('eduContent');
+  c.innerHTML='<div class="edu-header"><h3>Qualifications & Certifications</h3><p>Strong academic foundation with professional certifications and continuous learning in finance, technology, and leadership.</p></div><div class="cred-grid">'+creds.map(function(cr){return '<div class="cred-card"><div class="circle">'+cr.icon+'</div><h3>'+cr.title+'</h3><p class="inst">'+cr.inst+'</p></div>';}).join('')+'</div>';
 })();
 
 // ── Tab Switching ──
@@ -450,16 +479,35 @@ function switchTab(t){
 }
 
 // ── Navigation ──
-function navClick(e,href){e.preventDefault();toggleMobileMenu(true);if(href==='#hero'){window.scrollTo({top:0,behavior:'smooth'});}else{var el=document.querySelector(href);if(el)el.scrollIntoView({behavior:'smooth'});}}
-function toggleMobileMenu(forceClose){var o=document.getElementById('mobileOverlay');if(forceClose===true){o.style.display='none';return;}o.style.display=o.style.display==='flex'?'none':'flex';}
+function navClick(e,el){
+  e.preventDefault();
+  var href=el.getAttribute('href');
+  if(href==='#hero'){window.scrollTo({top:0,behavior:'smooth'});}
+  else{var target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'smooth'});}
+}
+function mobileNav(e,href){
+  e.preventDefault();
+  document.getElementById('mobileOverlay').classList.remove('open');
+  if(href==='#hero'){window.scrollTo({top:0,behavior:'smooth'});}
+  else{var target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'smooth'});}
+}
+function toggleMobile(){document.getElementById('mobileOverlay').classList.toggle('open');}
 
-// ── Header scroll ──
+// ── Header scroll + active nav ──
+var sectionIds=['connect','experience','skills','about-me','hero'];
 window.addEventListener('scroll',function(){
-  var h=document.getElementById('site-header');
+  var h=document.getElementById('siteHeader');
   h.classList.toggle('scrolled',window.scrollY>20);
-  var ids=['connect','experience','skills','about-me','hero'];
-  var links=document.querySelectorAll('#desktopNav a');
-  for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el){var r=el.getBoundingClientRect();if(r.top<=120&&r.bottom>120){links.forEach(function(a){a.classList.remove('active');if(a.getAttribute('href')==='#'+ids[i])a.classList.add('active');});break;}}}
+  var links=document.querySelectorAll('#desktopNav .nav-link');
+  for(var i=0;i<sectionIds.length;i++){
+    var el=document.getElementById(sectionIds[i]);
+    if(el){var r=el.getBoundingClientRect();
+      if(r.top<=120&&r.bottom>120){
+        links.forEach(function(a){a.classList.remove('active');if(a.getAttribute('data-id')===sectionIds[i])a.classList.add('active');});
+        break;
+      }
+    }
+  }
 },{passive:true});
 
 // ── Contact Form ──
