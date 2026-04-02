@@ -155,7 +155,7 @@ const ContactInfoCard = () => (
     <div style={{ height: '1px', backgroundColor: '#F0EDE6', margin: '1.75rem 0 1.25rem' }} />
     <p style={{ fontSize: '12px', color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 0.875rem', fontWeight: '600' }}>Connect with me</p>
     <div style={{ display: 'flex', gap: '0.75rem' }}>
-      <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer" data-testid="contact-linkedin"
+      <a href="https://www.linkedin.com/in/mishantgandhi" target="_blank" rel="noopener noreferrer" data-testid="contact-linkedin"
         style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', borderRadius: '10px', backgroundColor: '#003554', textDecoration: 'none', transition: 'background-color 0.3s ease, transform 0.2s ease' }}
         onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#B8860B'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
         onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#003554'; e.currentTarget.style.transform = 'translateY(0)'; }}

@@ -162,7 +162,7 @@ const Header = () => {
             {/* Icons sit outside the content area */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginRight: '20px', marginLeft: '-76px' }}>
               <a
-                href="https://www.linkedin.com/in/camishant-0525076563"
+                href="https://www.linkedin.com/in/mishantgandhi"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="header-linkedin"

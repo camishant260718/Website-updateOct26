@@ -122,12 +122,12 @@ const HeroLinkedInStats = ({ visible }) => (
       opacity: visible ? 1 : 0, transition: 'opacity 0.6s ease 0.55s', marginBottom: '0.5rem',
     }}
   >
-    <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer"
+    <a href="https://www.linkedin.com/in/mishantgandhi" target="_blank" rel="noopener noreferrer"
       style={{ fontSize: '14px', fontWeight: '700', color: '#003554', textDecoration: 'underline', textUnderlineOffset: '3px', fontFamily: "'Poppins', sans-serif" }}>
       5,214 followers
     </a>
     <span style={{ color: '#8A8577', fontSize: '14px' }}>·</span>
-    <a href="https://www.linkedin.com/in/camishant-0525076563" target="_blank" rel="noopener noreferrer"
+    <a href="https://www.linkedin.com/in/mishantgandhi" target="_blank" rel="noopener noreferrer"
       style={{ fontSize: '14px', fontWeight: '700', color: '#003554', textDecoration: 'underline', textUnderlineOffset: '3px', fontFamily: "'Poppins', sans-serif" }}>
       5,000+ connections
     </a>
