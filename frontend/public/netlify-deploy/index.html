@@ -192,6 +192,8 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
 .footer .copy{font-size:11.5px;color:rgba(255,255,255,0.2);margin:0;letter-spacing:0.5px;}
 
 /* ── WhatsApp FAB ── */
+.li-fab{position:fixed;bottom:160px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background-color:#0077b5;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,119,181,0.4);transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;}
+.li-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(0,119,181,0.5);}
 .wa-fab{position:fixed;bottom:96px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background-color:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;}
 .wa-fab:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,0.5);}
 
@@ -283,7 +285,6 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
       <button class="btn-collab" onclick="document.querySelector('#connect').scrollIntoView({behavior:'smooth'})">
         <span class="green-dot" style="width:8px;height:8px;"></span> Let's Collaborate
       </button>
-      <a href="mailto:mishant.gandhi@gmail.com?subject=CV%20Request&body=Hi%20Mishant%2C%0A%0AI%20would%20like%20to%20request%20your%20CV.%0A%0ARegards" class="btn-cv">Request My CV</a>
     </div>
     <div class="hero-stats">
       <a href="https://www.linkedin.com/in/mishantgandhi" target="_blank" rel="noopener noreferrer">5,214 followers</a>
@@ -414,6 +415,11 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
   <p class="copy">&copy; <script>document.write(new Date().getFullYear())</script> Mishant Gandhi &middot; Dubai, United Arab Emirates</p>
 </div>
 </footer>
+
+<!-- LINKEDIN FAB -->
+<a href="https://www.linkedin.com/in/mishantgandhi" target="_blank" rel="noopener noreferrer" class="li-fab">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</a>
 
 <!-- WHATSAPP FAB -->
 <a href="https://wa.me/971525076563" target="_blank" rel="noopener noreferrer" class="wa-fab">

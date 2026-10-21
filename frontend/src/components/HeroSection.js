@@ -88,29 +88,6 @@ const HeroCTAButtons = ({ visible }) => (
       }} />
       Let's Collaborate
     </button>
-    <a
-      href="mailto:mishant.gandhi@gmail.com?subject=CV%20Request&body=Hi%20Mishant%2C%0A%0AI%20would%20like%20to%20request%20your%20CV.%0A%0ARegards"
-      data-testid="hero-request-cv-btn"
-      style={{
-        backgroundColor: 'transparent', color: '#003554', border: '2px solid #003554',
-        padding: '9px 22px', borderRadius: '8px', fontSize: '12px', fontWeight: '700',
-        cursor: 'pointer', fontFamily: "'Poppins', sans-serif", letterSpacing: '1.5px',
-        textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '8px',
-        textDecoration: 'none', transition: 'background-color 0.3s ease, color 0.3s ease, transform 0.2s ease',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = '#003554';
-        e.currentTarget.style.color = '#FFFFFF';
-        e.currentTarget.style.transform = 'translateY(-2px)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'transparent';
-        e.currentTarget.style.color = '#003554';
-        e.currentTarget.style.transform = 'translateY(0)';
-      }}
-    >
-      Request My CV
-    </a>
   </div>
 );
 
