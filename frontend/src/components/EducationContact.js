@@ -198,6 +198,7 @@ const ContactFormCard = ({ form, errors, submitted, onSubmit, onChange, onReset 
         <div>
           <label style={{ display: 'block', fontSize: '13.5px', fontWeight: '600', color: '#003554', marginBottom: '6px' }}>Your Name</label>
           <input type="text" placeholder="Enter your name" value={form.name}
+            maxLength={100}
             onChange={(e) => onChange('name', e.target.value)}
             style={{ ...inputStyle, borderColor: errors.name ? '#e05c5c' : '#E5E7EB' }}
             onFocus={(e) => (e.target.style.borderColor = '#003554')}
@@ -209,6 +210,7 @@ const ContactFormCard = ({ form, errors, submitted, onSubmit, onChange, onReset 
           <div>
             <label style={{ display: 'block', fontSize: '13.5px', fontWeight: '600', color: '#003554', marginBottom: '6px' }}>Email Address</label>
             <input type="email" placeholder="Enter your email" value={form.email}
+              maxLength={254}
               onChange={(e) => onChange('email', e.target.value)}
               style={{ ...inputStyle, borderColor: errors.email ? '#e05c5c' : '#E5E7EB' }}
               onFocus={(e) => (e.target.style.borderColor = '#003554')}
@@ -219,6 +221,7 @@ const ContactFormCard = ({ form, errors, submitted, onSubmit, onChange, onReset 
           <div>
             <label style={{ display: 'block', fontSize: '13.5px', fontWeight: '600', color: '#003554', marginBottom: '6px' }}>Contact Number</label>
             <input type="tel" placeholder="+971 XX XXX XXXX" value={form.phone}
+              maxLength={20}
               onChange={(e) => onChange('phone', e.target.value)}
               style={{ ...inputStyle }}
               onFocus={(e) => (e.target.style.borderColor = '#003554')}
@@ -229,6 +232,7 @@ const ContactFormCard = ({ form, errors, submitted, onSubmit, onChange, onReset 
         <div>
           <label style={{ display: 'block', fontSize: '13.5px', fontWeight: '600', color: '#003554', marginBottom: '6px' }}>Your Message</label>
           <textarea placeholder="Tell me about the opportunity" value={form.message}
+            maxLength={2000}
             onChange={(e) => onChange('message', e.target.value)}
             rows={3} style={{ ...inputStyle, resize: 'vertical', minHeight: '80px' }}
             onFocus={(e) => (e.target.style.borderColor = '#003554')}

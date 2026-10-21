@@ -126,8 +126,11 @@ const HeroPhotoArea = ({ visible }) => (
   >
     <div data-testid="hero-photo-placeholder"
       style={{ width: '100%', maxWidth: '480px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-      <img src="/mishant-photo.png" alt="Mishant Gandhi"
+      <picture>
+        <source srcSet="/mishant-photo.webp" type="image/webp" />
+        <img src="/mishant-photo.png" alt="Mishant Gandhi"
         style={{ width: '100%', height: 'auto', objectFit: 'contain', maxHeight: '600px' }} />
+      </picture>
     </div>
   </div>
 );

@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mishant Gandhi — Senior Finance Professional, Chartered Accountant & Company Secretary based in Dubai, UAE.">
-<title>Mishant Gandhi | Finance Leader & CA</title>
+<meta name="description" content="Mishant Gandhi — Senior Finance Professional, Chartered Accountant &amp; Company Secretary based in Dubai, UAE.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Mishant Gandhi | Finance Leader &amp; CA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
@@ -295,7 +296,10 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
   </div>
   <div class="hero-photo-area">
     <div style="width:100%;max-width:480px;display:flex;align-items:flex-end;justify-content:center;">
+    <picture>
+      <source srcset="mishant-photo.webp" type="image/webp">
       <img src="mishant-photo.png" alt="Mishant Gandhi" loading="eager">
+    </picture>
     </div>
   </div>
 </div>
@@ -394,12 +398,12 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
     </div>
     <div class="form-card">
       <form id="contactForm" onsubmit="handleContact(event)">
-        <div><label>Your Name</label><input type="text" id="cName" class="form-input" placeholder="Enter your name" required></div>
+        <div><label>Your Name</label><input type="text" id="cName" class="form-input" placeholder="Enter your name" required maxlength="100"></div>
         <div class="form-row">
-          <div><label>Email Address</label><input type="email" id="cEmail" class="form-input" placeholder="Enter your email" required></div>
-          <div><label>Contact Number</label><input type="tel" id="cPhone" class="form-input" placeholder="+971 XX XXX XXXX"></div>
+          <div><label>Email Address</label><input type="email" id="cEmail" class="form-input" placeholder="Enter your email" required maxlength="254"></div>
+          <div><label>Contact Number</label><input type="tel" id="cPhone" class="form-input" placeholder="+971 XX XXX XXXX" maxlength="20"></div>
         </div>
-        <div><label>Your Message</label><textarea id="cMsg" class="form-input" placeholder="Tell me about the opportunity" rows="3"></textarea></div>
+        <div><label>Your Message</label><textarea id="cMsg" class="form-input" placeholder="Tell me about the opportunity" rows="3" maxlength="2000"></textarea></div>
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
     </div>
@@ -517,14 +521,19 @@ window.addEventListener('scroll',function(){
   }
 },{passive:true});
 
-// ── Contact Form ──
+// ── Contact Form (sanitized) ──
+function sanitize(str){return str.replace(/[<>&"']/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c];});}
 function handleContact(e){
   e.preventDefault();
-  var n=document.getElementById('cName').value,em=document.getElementById('cEmail').value,ph=document.getElementById('cPhone').value,msg=document.getElementById('cMsg').value;
-  if(!n.trim()||!em.trim())return;
+  var n=sanitize(document.getElementById('cName').value.trim()),
+      em=document.getElementById('cEmail').value.trim(),
+      ph=sanitize(document.getElementById('cPhone').value.trim()),
+      msg=sanitize(document.getElementById('cMsg').value.trim());
+  if(!n||!em)return;
+  if(!/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(em)){alert('Please enter a valid email address.');return;}
   var subj=encodeURIComponent('Portfolio Enquiry from '+n);
   var body=encodeURIComponent('Name: '+n+'\nEmail: '+em+'\nPhone: '+(ph||'Not provided')+'\n\nMessage:\n'+(msg||'No message'));
-  window.open('mailto:mishant.gandhi@gmail.com?subject='+subj+'&body='+body,'_blank');
+  window.location.href='mailto:mishant.gandhi@gmail.com?subject='+subj+'&body='+body;
 }
 </script>
 </body>
