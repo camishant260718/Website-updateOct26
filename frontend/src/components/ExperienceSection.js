@@ -224,6 +224,9 @@ const ExperienceSection = () => {
           .exp-card-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .cred-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
+        @media (max-width: 768px) {
+          .exp-card-grid { grid-template-columns: 1fr !important; }
+        }
         @media (max-width: 640px) {
           .exp-card-grid { grid-template-columns: 1fr !important; }
           .cred-grid { grid-template-columns: 1fr !important; }

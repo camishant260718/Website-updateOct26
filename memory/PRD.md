@@ -18,42 +18,32 @@ Build an elegant, minimal, and professional portfolio website for Mishant Gandhi
 - [x] Experience/Education - Tabbed interface (6 experience + 4 education cards)
 - [x] Contact Section - mailto form to mishant.gandhi@gmail.com, LinkedIn/WhatsApp links
 - [x] Footer - Dark navy with MG monogram
-- [x] WhatsApp floating FAB button
-- [x] LinkedIn floating FAB button (above WhatsApp)
-- [x] Code quality fixes (hook deps, magic numbers, sub-component extraction, useCallback)
-- [x] Standalone HTML for Cloudflare/Netlify deployment
-- [x] LinkedIn URL updated to linkedin.com/in/mishantgandhi
+- [x] WhatsApp + LinkedIn floating FAB buttons
+- [x] LinkedIn URL: linkedin.com/in/mishantgandhi
 - [x] "Request My CV" button removed
 
-## Security Implemented (Feb 2026)
-- [x] Security headers middleware (X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, X-XSS-Protection)
+## Security (Feb 2026)
+- [x] Security headers (X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy, X-XSS-Protection)
 - [x] Rate limiting on /api/contact (3/min) and /api/status POST (10/min)
-- [x] Input validation with Pydantic field_validators (email regex, max lengths)
-- [x] XSS sanitization via bleach on name/message fields
-- [x] CORS restricted to specific origins (mishantgandhi.com, preview URL)
-- [x] API docs disabled (docs_url=None, redoc_url=None)
-- [x] Form maxlength attributes (frontend + standalone HTML)
-- [x] Contact form JS sanitization (standalone HTML)
-- [x] Meta description and referrer policy updated
+- [x] Input validation (email regex, max lengths), XSS sanitization (bleach)
+- [x] CORS restricted to specific origins
+- [x] API docs disabled, form maxlength attributes
 
-## Performance Optimized (Feb 2026)
+## Responsive (Feb 2026)
+- [x] Mobile (375px): Single column layouts, smaller FABs (44px), header icons visible
+- [x] Tablet (768px): Experience cards single column, skills 2-col, header icons visible
+- [x] Desktop (1920px): Full multi-column layouts unchanged
+- [x] No horizontal overflow on any viewport
+- [x] Mobile hamburger menu functional
+
+## Performance (Feb 2026)
 - [x] WebP image (29KB) with PNG fallback (290KB) via picture element
-- [x] Font preconnect hints already in place
-- [x] Google Fonts display=swap for non-blocking load
-
-## Key Emails
-- Contact Form -> mailto:mishant.gandhi@gmail.com
 
 ## MOCKED
 - Contact form uses `mailto:` protocol (opens visitor's email client)
 
-## Cloudflare Recommendations (require external configuration)
-- Enable Cloudflare Bot Fight Mode in dashboard
-- Enable Under Attack Mode only during active attacks
-- Set SSL/TLS to Full (Strict)
-- Enable Auto Minify for JS/CSS/HTML in Speed settings
-- Enable Brotli compression
+## Cloudflare Recommendations (external config)
+- Enable Bot Fight Mode, SSL Full (Strict), Auto Minify, Brotli compression
 
 ## Backlog
-- P2: Mobile responsive testing
 - P3: SEO meta tags & favicon

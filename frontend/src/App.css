@@ -3,3 +3,45 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal overflow on all devices */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ── Mobile Responsive Fixes ── */
+
+/* Header social icons: remove negative margin that pushes them off-screen on small viewports */
+@media (max-width: 900px) {
+  .header-social-icons {
+    margin-left: 0 !important;
+    margin-right: 12px !important;
+  }
+}
+
+/* Floating FABs: smaller on mobile to avoid overlapping content */
+@media (max-width: 640px) {
+  [data-testid="linkedin-fab"],
+  [data-testid="whatsapp-fab"] {
+    width: 44px !important;
+    height: 44px !important;
+    right: 16px !important;
+  }
+  [data-testid="linkedin-fab"] {
+    bottom: 124px !important;
+  }
+  [data-testid="whatsapp-fab"] {
+    bottom: 72px !important;
+  }
+  [data-testid="linkedin-fab"] svg,
+  [data-testid="whatsapp-fab"] svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+/* Experience cards: ensure text doesn't overflow viewport on tablet */
+@media (max-width: 1024px) {
+  .exp-card-grid {
+    overflow: hidden;
+  }
+}

@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;color:#1A1A2E;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
 a{text-decoration:none;}
 img{display:block;}
 
@@ -210,6 +210,9 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
   .cred-grid{grid-template-columns:repeat(2,1fr) !important;}
   .exp-card-grid{grid-template-columns:repeat(2,1fr) !important;}
 }
+@media(max-width:768px){
+  .exp-card-grid{grid-template-columns:1fr !important;}
+}
 @media(max-width:900px){
   .desktop-nav{display:none !important;}
   .mobile-menu-btn{display:block !important;}
@@ -217,7 +220,7 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
   .hero-photo-area{order:-1;max-width:280px;margin:0 auto;}
   .about-grid{grid-template-columns:1fr !important;}
   .connect-grid{grid-template-columns:1fr !important;}
-  .header-icons{margin-left:0 !important;}
+  .header-icons{margin-left:0 !important;margin-right:12px !important;}
 }
 @media(max-width:640px){
   .skills-grid{grid-template-columns:1fr !important;}
@@ -225,6 +228,10 @@ textarea.form-input{resize:vertical;min-height:80px;font-family:'Poppins',sans-s
   .exp-card-grid{grid-template-columns:1fr !important;}
   .skills-header .tagline{text-align:left !important;}
   .form-row{grid-template-columns:1fr !important;}
+  .wa-fab,.li-fab{width:44px !important;height:44px !important;right:16px !important;}
+  .li-fab{bottom:124px !important;}
+  .wa-fab{bottom:72px !important;}
+  .wa-fab svg,.li-fab svg{width:22px !important;height:22px !important;}
 }
 </style>
 </head>
