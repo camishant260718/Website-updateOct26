@@ -122,7 +122,7 @@ export const EducationSection = () => (
 /* ─── Contact Sub-Components ─────────────────────────────────────── */
 
 const CONTACT_ITEMS = [
-  { Icon: Mail,   label: 'Email',    value: 'mishant.gandhi@gmail.com', href: 'mailto:mishant.gandhi@gmail.com' },
+  { Icon: Mail,   label: 'Email',    value: 'connect@mishantgandhi.com', href: 'mailto:connect@mishantgandhi.com' },
   { Icon: Phone,  label: 'Phone',    value: '+971 52 507 6563', href: 'tel:+971525076563' },
   { Icon: MapPin, label: 'Location', value: 'Dubai, United Arab Emirates', href: null },
 ];
@@ -277,7 +277,7 @@ export const ContactSection = () => {
     setErrors({});
     const subject = encodeURIComponent(`Portfolio Enquiry from ${form.name}`);
     const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'Not provided'}\n\nMessage:\n${form.message || 'No message'}`);
-    window.open(`mailto:mishant.gandhi@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    window.open(`mailto:connect@mishantgandhi.com?subject=${subject}&body=${body}`, '_blank');
     setSubmitted(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form]);
